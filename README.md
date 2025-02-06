@@ -14,4 +14,5 @@ The frontend provides a responsive and user-friendly shopping experience.
  # Milestone_4
 
  # Milestone_5
+ Did the Signup page 
  

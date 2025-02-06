@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-
+import { Link } from 'react-router-dom';
 import { IoMailSharp } from "react-icons/io5";
 import {LuEyeClosed} from "react-icons/lu";
-import {Link} from "react-router-dom"
+
 const Login = () => {
   const [email,setemail]=useState('')
   const [password,setPassword]=useState('')
@@ -33,7 +33,7 @@ const Login = () => {
             <button type='submit' className='w-full bg-cyan-400 text-center text-xl mt-5 rounded-lg h-10'>Submit</button>
             <div className='flex w-full mt-3 justify-center'>
               <h6 className='text-xs'>Dont have an account</h6>
-              <Link className='ml-4 text-xs text-sky-500'>Sign-Up</Link>
+              <Link className='ml-4 text-xs text-sky-500' to={'/Signup'}>Sign-Up</Link>
             </div>
           </form>
         </div>
