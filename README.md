@@ -7,7 +7,11 @@ The frontend provides a responsive and user-friendly shopping experience.
  Did the frontended part of login page using tailwind_css.
  
  Login page contains things like email id, password, remember me, forgot password , submit,signup
-# Milestone 3
+# Milestone_3
  created an server
  linked mongo DB with the backend Tech Stack
  Mongo DB, Express JS, Nodemon
+ # Milestone_4
+
+ # Milestone_5
+ 
