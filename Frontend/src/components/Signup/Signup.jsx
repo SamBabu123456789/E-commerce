@@ -1,11 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Signup from '../../components/Signup/'
 
 const Signup = () => {
+  const [name,setName] =useState('')
+  const [email,setEmail]=useState('')
+  const [password,setPassword]=useState('')
+  const [visible,setVisible]=useState(false)
+  const [avatar,setAvatar]=useState('')
+  const [msg,setMsg]=useState('')
+  const handleInput=(e)=>{
+    const file=e.target.files[0]
+    setAvatar(file)
+  }
+    const handleSubmit=(e)=>{
+      e.preventDefault()
+    }
+    const config = {headers:{"Content-type":"multipart/form-data"}}
+    const newForm = new FormData()
+    newForm.append("file",avatar)
+    newForm.append("name",name)
+    newForm.append("email",email)
+    newForm.append("password",password)
+    
+    axios.post(`${server}/create-user`,newForm,config).then((res)=>{
+      console.log(res)
+      setEmail('')
+      setName('')
+      setPassword('')
+      setAvatar('')
+      setMsg(res.data.message)  
+    }).catch((err)=>{
+      console.log(err)
+      setMsg('failed')
+    })
+      
   return (
     <div className='flex flex-col box-border h-screen justify-center items-center bg-gray-100'>
       {msg && error &&(<h1 className='text-red-600 font-bold text-2xl'>{msg}</h1>)}
-      {msg&& (<h1 className='text-green-600 font-bold text-2xl'>{msg}</h1>)}
+      {msg && (<h1 className='text-green-600 font-bold text-2xl'>{msg}</h1>)}
       <div className='flex flex-col w-109 h-109   rounded-xl shadow-xl shawdow-black-600 bg-sky-100'>
         <div>
         <h1 className='text-center mt-5 text-2xl font-bold'>Create Account</h1>
@@ -40,5 +72,4 @@ const Signup = () => {
     </div>
   )
 }
-
 export default Signup
