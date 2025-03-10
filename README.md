@@ -36,5 +36,30 @@ The frontend provides a responsive and user-friendly shopping experience.
  # Milestone-10
  Created product schema
  Created an end point to validate and store product details in mongodb.
- 
+ # Milestone_11
+ Wrote an endpoint that will send all products data to frontend In frontend write an function to get all the data Display these data dynamically passing to product card component
+ # Milestone_12
+ Wrote an endpoint that will send data by filtering with my mail and send data from mongodb.
+ Receive data at frontend -How to display that data dynamically using product card created earlier.
+ # Milestone_13
+ Wrote an endpoint that will update the existing data in MongoDB.
+ Auto fill the form with previous data and give option to edit.
+ # Milestone_14
+ Wrote an endpoint that delete the product with specific ID from MongoDB.
+ # Milestone_15
+ Created new Nav component  with links to all pages:
+    Home
+    My-products
+    Add product
+    cart
+
+ # Milestone-16
+ Created a new page to display each product.
+ Added quantity and add to card button. 
+ # Milestone-17
+ Edited the user schema to store cart products .
+ Wrote an end point to receive the product details and store in database.
+ # Milestone-18
+ Created an endpoint to receive request from cart page.
+ Created an backend endpoint to fetch all the products inside cart with user mail.
  
