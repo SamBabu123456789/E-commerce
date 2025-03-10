@@ -39,6 +39,20 @@ const productSchema = new mongoose.Schema(
             type: Date,
             default: Date.now, 
         },
+        cart:[
+            {
+                productid: {
+                    type:String,
+                    require:true,
+                    unique:true,
+                },
+                quantity:{
+                    type:Number,
+                    required:true,
+                    min:0,
+                },
+            },
+        ],
     },
     {
         timestamps: true,

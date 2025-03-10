@@ -11,15 +11,20 @@ const userSchema = new mongoose.schema({
         id:{type:String},
         url:{type:String},
     },
-    address:[{
-        country:{type:string , required:true},
-        city:{type:string,required:true},
-        address1:{type:string},
-        address2:{type:string},
-        pincode:{type:Number,required:true},
-
+    cart:[
+        {
+            productId:{
+                type: mongoose.Schema.Types.ObjectId,
+                ref:"Product"
+        },
+        quantity:{
+            type:Number,
+            required:true,
+            min: 1,
+            default:1,
+        },
     }
-],
+    ],
 role:{type:string,default:user},
 createdAt:{type:Date,default:Date.now()}
 

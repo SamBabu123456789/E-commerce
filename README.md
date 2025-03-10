@@ -37,3 +37,4 @@ The frontend provides a responsive and user-friendly shopping experience.
  Created product schema
  Created an end point to validate and store product details in mongodb.
  
+ 
