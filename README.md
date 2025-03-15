@@ -62,4 +62,7 @@ The frontend provides a responsive and user-friendly shopping experience.
  # Milestone-18
  Created an endpoint to receive request from cart page.
  Created an backend endpoint to fetch all the products inside cart with user mail.
+ # Milestone-19
+ Created a backend endpoint that will send all the user data using mail.
+ Created a frontend profile page that will display all the user data (eg.display profile photo, name, mail and addresses)
  
