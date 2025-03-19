@@ -65,4 +65,9 @@ The frontend provides a responsive and user-friendly shopping experience.
  # Milestone-19
  Created a backend endpoint that will send all the user data using mail.
  Created a frontend profile page that will display all the user data (eg.display profile photo, name, mail and addresses)
- 
+ # Milestone-20
+ Created a backend endpoint that will send all the user data using mail.
+ Created a frontend profile page that will display all the user data(displays profile photo, name, mail and addresses.)
+ # Milestone-21
+ Created an frontend form that will will take address,take country, city, address1, address2, zip code, address type
+ # Milestone-22
