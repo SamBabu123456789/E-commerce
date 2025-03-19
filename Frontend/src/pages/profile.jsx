@@ -16,7 +16,7 @@ export default function Profile() {
 
 	useEffect(() => {
 		fetch(
-			`http://localhost:5000/api/user/profile?email=${"sankamithra1614@gmail.com"}`,
+			`http://localhost:5000/api/user/profile?email=${"sambabupolimetla@gmail.com"}`,
 			{
 				method: "GET",
 				headers: {
@@ -35,7 +35,6 @@ export default function Profile() {
 				setAddresses(data.addresses);
 				console.log("User fetched:", data);
 				console.log("User fetched:", data.user);
-				//console.log("Addresses fetched:", data.addresses);
                
 			});
 	}, []);
@@ -64,7 +63,7 @@ export default function Profile() {
 									alt="profile"
 									className="w-40 h-40 rounded-full"
 									onError={(e) => {
-										e.target.onerror = null; // Prevents infinite loop if the default image also fails
+										e.target.onerror = null; 
 										e.target.src = `https://cdn.vectorstock.com/i/500p/17/61/male-avatar-profile-picture-vector-10211761.jpg`;
 									}}
 								/>
