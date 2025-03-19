@@ -71,3 +71,4 @@ The frontend provides a responsive and user-friendly shopping experience.
  # Milestone-21
  Created an frontend form that will will take address,take country, city, address1, address2, zip code, address type
  # Milestone-22
+ Created a backend endpoint that will store the address inside user profile in database.
