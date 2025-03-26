@@ -76,3 +76,5 @@ The frontend provides a responsive and user-friendly shopping experience.
  Added a button inside cart called "Place order"
  Created a select address page where we will display all the address and ask to select delivery address.
  Wrote mongoose schema for storing orders details.
+ # Milestone-24
+ Created an order conformation page.
