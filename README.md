@@ -72,3 +72,7 @@ The frontend provides a responsive and user-friendly shopping experience.
  Created an frontend form that will will take address,take country, city, address1, address2, zip code, address type
  # Milestone-22
  Created a backend endpoint that will store the address inside user profile in database.
+ # Milestone-23
+ Added a button inside cart called "Place order"
+ Created a select address page where we will display all the address and ask to select delivery address.
+ Wrote mongoose schema for storing orders details.
