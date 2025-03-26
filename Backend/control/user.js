@@ -16,7 +16,6 @@ const router = express.Router();
 router.post("/create-user", upload.single("file"), async (req, res, next) => {
    try{ const { name, email, password } = req.body;
 
-   
     const userEmail = await User.findOne({ email });
     if (userEmail) {
         if (req.file) {
@@ -33,14 +32,17 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
     }
     
     const fileName = req.file.filename;
-    const fileUrl = path.join(__dirname, '..', 'uploads', fileName);
 
+   
+    const fileUrl = path.join(__dirname, '..', 'uploads', fileName);  
+
+    
     const user = {
         name: name,
         email: email,
         password:password,
         avatar: {
-             id: fileName,  
+             id: fileName, 
         url: `/uploads/${fileName}`
         }
     };
@@ -72,6 +74,8 @@ const createActivationToken = (user) => {
     return jwt.sign(user, process.env.ACTIVATION_SECRET, { expiresIn: 300 });
 }
 
+
+
 router.post("/activate", async (req, res, next) => {
 try{
     const {activationToken}=req.body
@@ -90,13 +94,16 @@ const user=await User.create({
     password,
     avatar
 
+
 })
 
 sendToken(user,200,res)}
 catch(error){
     return next(new ErrorHandler(error.message,500))
 }
+
 })
+
 
 router.post('/login-user' , async(req,res,next)=>{
     try{
@@ -111,9 +118,14 @@ if(!isPasswordValid)
     return next(new ErrorHandler("please provide correct information",400))
 sendToken(user,201,res)
     }
+
+    
     catch(e){
     return next(new ErrorHandler(e.message,500))}
 })
+
+
+
 
 router.get('/getuser',isAuthenticated, async(req,res,next)=>{
     try{
@@ -131,4 +143,76 @@ router.get('/getuser',isAuthenticated, async(req,res,next)=>{
     }
 })
 
+
+
+router.get("/profile",async (req, res, next) => {
+    const { email } = req.query;
+    if (!email) {
+       
+        res.status(400).send('provide email')
+    }
+    const user = await User.findOne({ email });
+    if (!user) {
+       
+        res.status(400).send('user not exist')
+    }
+    res.status(200).json({
+        success: true,
+        user: {
+            name: user.name,
+            email: user.email,
+            phoneNumber: user.phoneNumber,
+            avatarUrl: user.avatar.url
+        },
+        addresses: user.address,
+    });
+});
+
+router.post("/add-address",async (req, res, next) => {
+    try{
+    const { country, city, address1, address2, zipCode, addressType, email } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+     
+        res.status(400).send('user not there')
+    }
+
+    const newAddress = {
+        country,
+        city,
+        address1,
+        address2,
+        zipCode,
+        addressType,
+    };
+
+    user.address.push(newAddress);
+    await user.save();
+
+    res.status(201).json({
+        success: true,
+        addresses: user.address,
+    });}
+    catch(e){
+        res.status(500).send(e.message)
+    }
+});
+
+router.get("/addresses", async(req, res, next) => {
+    const { email } = req.query;
+    if (!email) {
+        return next(new ErrorHandler("Please provide an email", 400));
+    }
+    const user = await User.findOne({ email });
+    if (!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+    res.status(200).json({
+        success: true,
+        addresses: user.address,
+    });
+}
+);
 module.exports = router;
