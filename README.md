@@ -78,3 +78,5 @@ The frontend provides a responsive and user-friendly shopping experience.
  Wrote mongoose schema for storing orders details.
  # Milestone-24
  Created an order conformation page.
+ # Milestone-25
+ Created an backend endpoint that will help in placing the order.
