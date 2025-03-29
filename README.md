@@ -80,3 +80,5 @@ The frontend provides a responsive and user-friendly shopping experience.
  Created an order conformation page.
  # Milestone-25
  Created an backend endpoint that will help in placing the order.
+ # Milestone-26
+ Created an backend endpoint that will help getting all the orders of the user. 
