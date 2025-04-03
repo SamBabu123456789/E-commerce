@@ -8,12 +8,11 @@ const Cart = () => {
 const navigate= useNavigate()
     const [products, setProducts] = useState([]);
     const handlePlaceOrder = () => {
-        navigate('/select-address',{ state:{products:products}}); // Navigate to the Select Address page
-      };
+        navigate('/select-address',{ state:{products:products}});
 
     useEffect(() => {
       axios
-        .get(`http://localhost:5000/api/product/cartProduct?email=${'sankamithra1614@gmail.com'}`)
+        .get(`http://localhost:5000/api/product/cartProduct?email=${'sambabupolimetla@gmail.com'}`)
         .then((res) => {
             console.log("Products fetched:", res);
           setProducts(res.data.cart.map(product => ({ quantity: product['quantity'], ...product['productId'] })));
