@@ -52,4 +52,5 @@ const navigate= useNavigate()
         </div>
     );
 }
-export default Cart;
+}
+export default Cart 
