@@ -1,15 +1,15 @@
 // SelectAddress.jsx
 import React, { useState, useEffect } from 'react';
 import Nav from '../components/nav'; 
-import { useNavigate } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 const SelectAddress = () => {
     const [addresses, setAddresses] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
-
-  
+  const location=      useLocation()
+  console.log(location.state)
     const userEmail = 'sambabupolimetla@gmail.com'; 
 
     useEffect(() => {
@@ -33,13 +33,12 @@ console.log("taking address from data", data.data.addresses )
         fetchAddresses();
     }, [userEmail]);
 
-
+   
         const handleSelectAddress = (addressId) => {
             console.log("Navigating with:", addressId, userEmail);
             navigate('/order-confirmation', { state: { addressId, userEmail } });
         };
         
-    
     
     if (loading) {
         return (
@@ -49,6 +48,7 @@ console.log("taking address from data", data.data.addresses )
         );
     }
 
+   
     if (error) {
         return (
             <div className='w-full h-screen flex flex-col justify-center items-center'>
