@@ -1,10 +1,9 @@
-
 import { useEffect, useState } from 'react';
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from 'react-toastify';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { LoginPage,Signup,ActivationPage,HomePage,CreateProduct,MyProduct,ProductDetail,Cart,Profile,CreateAddress ,SelectAddress,OrderConfirmation} from './Route/Routes'
+import { LoginPage,Signup,ActivationPage,HomePage,CreateProduct,MyProduct,ProductDetail,Cart,Profile,CreateAddress ,SelectAddress,OrderConfirmation,MyOrders} from './routes/Routes'
 import { Bounce } from "react-awesome-reveal";
 import server from './server';
 import axios from 'axios';
@@ -36,6 +35,7 @@ axios.get(`${server}/user/getuser`,{withCredentials:true})
                  <Route path='/create-address' element={<CreateAddress />} />
                  <Route path="/select-address" element={<SelectAddress />} />
                  <Route path="/order-confirmation" element={<OrderConfirmation />} />
+                 <Route path="/myOrder" element={<MyOrders />} />
             </Routes>
  
         </>
@@ -43,5 +43,3 @@ axios.get(`${server}/user/getuser`,{withCredentials:true})
 }
 
 export default App;
-
-

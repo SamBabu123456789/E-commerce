@@ -84,3 +84,5 @@ The frontend provides a responsive and user-friendly shopping experience.
  Created an backend endpoint that will help getting all the orders of the user. 
  # Milestone-27
  Created a frontend page that will display all the user orders.
+ # Milestone-28
+ 
