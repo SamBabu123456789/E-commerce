@@ -3,11 +3,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from 'react-toastify';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { LoginPage,Signup,ActivationPage,HomePage,CreateProduct,MyProduct,ProductDetail,Cart,Profile,CreateAddress ,SelectAddress,OrderConfirmation,MyOrders} from './routes/Routes'
+import { LoginPage,Signup,ActivationPage,HomePage,CreateProduct,MyProduct,ProductDetail,Cart,Profile,CreateAddress ,SelectAddress,OrderConfirmation,MyOrders} from './Routes/Routes'
 import { Bounce } from "react-awesome-reveal";
 import server from './server';
 import axios from 'axios';
-
+import React from 'react';
 function App() {
     const [count, setCount] = useState(0);
 
@@ -43,3 +43,4 @@ axios.get(`${server}/user/getuser`,{withCredentials:true})
 }
 
 export default App;
+

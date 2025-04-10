@@ -34,6 +34,7 @@ router.post('/createProduct',pupload.array('images',10),async(req,res)=>{
 
     try {
     
+
         const newProduct = new Product({
             name,
             description,
@@ -68,7 +69,6 @@ router.get('/get-products', async (req, res) => {
         const productsWithFullImageUrl = products.map(product => {
             if (product.images && product.images.length > 0) {
                 product.images = product.images.map(imagePath => {
-                  
                     return imagePath
 
                 });
@@ -94,7 +94,6 @@ if(!products)
             const productsWithFullImageUrl = products.map(product => {
                 if (product.images && product.images.length > 0) {
                     product.images = product.images.map(imagePath => {
-                       
                         return imagePath
     
                     });
@@ -266,3 +265,14 @@ router.put('/clear-cart', async (req, res) => {
         res.status(500).json({ error: "Internal server error", details: error.message });
     }
 });
+
+router.get('/myOrder',async(req,res)=>{
+    try{
+const email = req.query
+if(!email)
+    res.status(400).json({msg})
+    }
+    catch(e){
+
+    }
+})

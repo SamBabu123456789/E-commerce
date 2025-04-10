@@ -1,6 +1,13 @@
 import React from 'react'
 
-function myOders({}) {
+function myOrders({
+    productId
+    }) {
+
+
+
+
+        
   return (
     <div>
       
@@ -8,4 +15,4 @@ function myOders({}) {
   )
 }
 
-export default myOders
+export default myOrders
