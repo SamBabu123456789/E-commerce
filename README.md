@@ -88,4 +88,6 @@ The frontend provides a responsive and user-friendly shopping experience.
  Added cancel button in my-orders and created an backend endpoint for cancel order.
  # Milestone-29
  Added online payment gateway to our application using Paypal api.
+ # Milestone-30
+ Implemented online payment using PayPal API using the client key we created earlier.
  
